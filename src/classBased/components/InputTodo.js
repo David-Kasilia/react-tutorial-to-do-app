@@ -1,28 +1,34 @@
-import React, { Component } from "react";
+/* eslint-disable no-alert */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/state-in-constructor */
+
+import React, { Component } from 'react';
 
 class InputTodo extends Component {
   state = {
-    title: "",
+    title: '',
   };
 
   onChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-  handleSubmit = e => {
-    e.preventDefault()
+
+  handleSubmit = (e) => {
+    e.preventDefault();
     if (this.state.title.trim()) {
-      this.props.addTodoProps(this.state.title)
+      this.props.addTodoProps(this.state.title);
       this.setState({
-        title: "",
-      })
+        title: '',
+      });
     } else {
-      alert("Please write item")
+      alert('Please write item');
     }
   }
-  
+
   render() {
     return (
-        <form onSubmit={this.handleSubmit} className="form-container">
+      <form onSubmit={this.handleSubmit} className="form-container">
         <input
           type="text"
           className="input-text"
@@ -31,7 +37,7 @@ class InputTodo extends Component {
           name="title"
           onChange={this.onChange}
         />
-        <button className="input-submit">Submit</button>
+        <button type="button" className="input-submit">Submit</button>
       </form>
     );
   }
