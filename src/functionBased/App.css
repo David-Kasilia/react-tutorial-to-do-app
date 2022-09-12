@@ -69,3 +69,8 @@ body {
   font-size: 20px;
   margin-top: 2px;
 }
+
+.active-link {
+  color: orangered;
+  text-decoration: underline;
+}
